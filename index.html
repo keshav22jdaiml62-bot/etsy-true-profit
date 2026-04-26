@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EtsyTrue shows your real profit after every Etsy fee, material cost, and hour worked — for every listing. Free Chrome extension." />
+  <title>EtsyTrue — Know Your Real Etsy Profit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── Navbar ──────────────────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-mark">E</span>
+        <span class="nav-logo-text">EtsyTrue</span>
+      </a>
+      <div class="nav-links">
+        <a href="#how-it-works">How it Works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a href="#" class="btn btn-brand btn-sm nav-cta">Add to Chrome — Free</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="#how-it-works">How it Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#" class="btn btn-brand">Add to Chrome — Free</a>
+    </div>
+  </nav>
+
+  <!-- ── Hero ────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Free Chrome Extension &nbsp;·&nbsp; Official Etsy API
+      </div>
+      <h1 class="hero-headline">
+        Do You Actually Know<br />
+        <span class="gradient-text">What You're Making</span><br />
+        on Etsy?
+      </h1>
+      <p class="hero-sub">
+        Most Etsy sellers confuse revenue with profit. EtsyTrue shows your&nbsp;<strong>true&nbsp;profit</strong>
+        after every Etsy fee, material cost, and hour worked — for every listing, automatically.
+      </p>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-brand btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Add to Chrome — Free
+        </a>
+        <a href="#how-it-works" class="btn btn-outline btn-lg">See How It Works</a>
+      </div>
+      <div class="trust-badge">
+        <span>🔐 Uses Official Etsy API</span>
+        <span class="trust-divider">·</span>
+        <span>👁️ Read-Only Access</span>
+        <span class="trust-divider">·</span>
+        <span>🔒 Never Stores Passwords</span>
+      </div>
+
+      <!-- Dashboard mockup -->
+      <div class="hero-mockup">
+        <div class="mockup-bar">
+          <span class="mockup-dot red"></span>
+          <span class="mockup-dot yellow"></span>
+          <span class="mockup-dot green"></span>
+          <span class="mockup-url">chrome-extension://etsytrue/dashboard.html</span>
+        </div>
+        <div class="mockup-body">
+          <div class="mockup-sidebar">
+            <div class="mockup-logo-row"><span class="mockup-logo-mark">E</span><span>EtsyTrue</span></div>
+            <div class="mockup-nav-item active">📊 Overview</div>
+            <div class="mockup-nav-item">🏷️ Products</div>
+            <div class="mockup-nav-item">💡 Optimizer</div>
+            <div class="mockup-nav-item">⚙️ Settings</div>
+          </div>
+          <div class="mockup-main">
+            <div class="mockup-kpis">
+              <div class="mockup-kpi">
+                <div class="mockup-kpi-label">Revenue</div>
+                <div class="mockup-kpi-value">$2,847</div>
+                <div class="mockup-kpi-delta up">↑ 12%</div>
+              </div>
+              <div class="mockup-kpi">
+                <div class="mockup-kpi-label">True Profit</div>
+                <div class="mockup-kpi-value green">$891</div>
+                <div class="mockup-kpi-delta up">↑ 8%</div>
+              </div>
+              <div class="mockup-kpi">
+                <div class="mockup-kpi-label">Margin</div>
+                <div class="mockup-kpi-value">31.3%</div>
+                <div class="mockup-kpi-delta down">↓ 2%</div>
+              </div>
+              <div class="mockup-kpi">
+                <div class="mockup-kpi-label">Orders</div>
+                <div class="mockup-kpi-value">54</div>
+                <div class="mockup-kpi-delta up">↑ 6</div>
+              </div>
+            </div>
+            <div class="mockup-chart">
+              <div class="mockup-bar-group">
+                <div class="mockup-bar-wrap"><div class="mockup-bar-fill rev" style="height:55%"></div></div>
+                <div class="mockup-bar-wrap"><div class="mockup-bar-fill prof" style="height:30%"></div></div>
+              </div>
+              <div class="mockup-bar-group">
+                <div class="mockup-bar-wrap"><div class="mockup-bar-fill rev" style="height:70%"></div></div>
+                <div class="mockup-bar-wrap"><div class="mockup-bar-fill prof" style="height:38%"></div></div>
+              </div>
+              <div class="mockup-bar-group">
+                <div class="mockup-bar-wrap"><div class="mockup-bar-fill rev" style="height:45%"></div></div>
+                <div class="mockup-bar-wrap"><div class="mockup-bar-fill prof" style="height:22%"></div></div>
+              </div>
+              <div class="mockup-bar-group">
+                <div class="mockup-bar-wrap"><div class="mockup-bar-fill rev" style="height:85%"></div></div>
+                <div class="mockup-bar-wrap"><div class="mockup-bar-fill prof" style="height:50%"></div></div>
+              </div>
+              <div class="mockup-bar-group">
+                <div class="mockup-bar-wrap"><div class="mockup-bar-fill rev" style="height:62%"></div></div>
+                <div class="mockup-bar-wrap"><div class="mockup-bar-fill prof" style="height:35%"></div></div>
+              </div>
+            </div>
+            <div class="mockup-table-row header">
+              <span>Listing</span><span>Margin</span><span>Status</span>
+            </div>
+            <div class="mockup-table-row">
+              <span>Wedding Sign</span><span class="green">38%</span>
+              <span class="mockup-badge strong">🌟 Strong</span>
+            </div>
+            <div class="mockup-table-row">
+              <span>Soy Candle Set</span><span class="yellow">14%</span>
+              <span class="mockup-badge low">📊 Low</span>
+            </div>
+            <div class="mockup-table-row">
+              <span>Tote Bag</span><span class="red">4%</span>
+              <span class="mockup-badge losing">⚠️ Losing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pain section ────────────────────────────────────────────────── -->
+  <section class="pain-section">
+    <div class="container">
+      <p class="section-eyebrow">The problem</p>
+      <h2 class="section-title">Your Etsy Dashboard Is Lying to You</h2>
+      <p class="section-sub">Not intentionally. But revenue isn't profit — and most sellers don't know the difference until it's too late.</p>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon">💸</div>
+          <h3>You see revenue.<br />Not profit.</h3>
+          <p>Etsy shows you what came in. Not what you actually keep after fees, materials, and your own time.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">🔄</div>
+          <h3>Your bestseller might be your worst listing.</h3>
+          <p>High sales volume on a low-margin item can actually cost you money when your time is factored in.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">📉</div>
+          <h3>Every underpriced sale locks in a loss.</h3>
+          <p>Without knowing your real costs, you can't price correctly — and a busy shop can still go broke.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── How it works ─────────────────────────────────────────────────── -->
+  <section class="how-section" id="how-it-works">
+    <div class="container">
+      <p class="section-eyebrow">How it works</p>
+      <h2 class="section-title">Up and Running in 3 Minutes</h2>
+      <p class="section-sub">No spreadsheets. No manual data entry. No complexity.</p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-icon">🔗</div>
+          <h3>Connect Your Shop</h3>
+          <p>One click using the official Etsy API. Read-only access — we can never touch your shop or make changes.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-icon">✏️</div>
+          <h3>Enter Your Costs</h3>
+          <p>Tell us your material cost per unit, how long each item takes to make, and your hourly rate. Stored locally, never shared.</p>
+        </div>
+        <div class="step-connector"></div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-icon">📊</div>
+          <h3>See True Profit</h3>
+          <p>Instantly see profit per listing, overall margin, and which items are making vs costing you money.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Interactive calculator ───────────────────────────────────────── -->
+  <section class="calc-section" id="calculator">
+    <div class="container">
+      <p class="section-eyebrow">Try it now</p>
+      <h2 class="section-title">Run the Numbers on Your Own Product</h2>
+      <p class="section-sub">Move the sliders and watch your real profit update instantly.</p>
+
+      <div class="calc-card">
+        <div class="calc-inputs">
+          <div class="calc-input-group">
+            <div class="calc-label-row">
+              <label>Sale Price</label>
+              <span class="calc-val" id="val-price">$22</span>
+            </div>
+            <input type="range" id="slider-price" min="5" max="100" value="22" step="1" class="range-slider" />
+            <div class="range-ends"><span>$5</span><span>$100</span></div>
+          </div>
+          <div class="calc-input-group">
+            <div class="calc-label-row">
+              <label>Material Cost</label>
+              <span class="calc-val" id="val-material">$6</span>
+            </div>
+            <input type="range" id="slider-material" min="0" max="50" value="6" step="0.5" class="range-slider" />
+            <div class="range-ends"><span>$0</span><span>$50</span></div>
+          </div>
+          <div class="calc-input-group">
+            <div class="calc-label-row">
+              <label>Labor Hours</label>
+              <span class="calc-val" id="val-hours">0.75 hrs</span>
+            </div>
+            <input type="range" id="slider-hours" min="0" max="4" value="0.75" step="0.25" class="range-slider" />
+            <div class="range-ends"><span>0 hrs</span><span>4 hrs</span></div>
+          </div>
+          <div class="calc-input-group">
+            <div class="calc-label-row">
+              <label>Your Hourly Rate</label>
+              <span class="calc-val" id="val-rate">$15/hr</span>
+            </div>
+            <input type="range" id="slider-rate" min="10" max="50" value="15" step="1" class="range-slider" />
+            <div class="range-ends"><span>$10</span><span>$50</span></div>
+          </div>
+        </div>
+
+        <div class="calc-results">
+          <h3 class="calc-results-title">Your Breakdown</h3>
+          <div class="calc-breakdown">
+            <div class="breakdown-row">
+              <span class="breakdown-label">Sale Price</span>
+              <span class="breakdown-val" id="res-price">$22.00</span>
+            </div>
+            <div class="breakdown-row fee">
+              <span class="breakdown-label">
+                <span class="breakdown-dot red"></span>
+                Etsy Transaction Fee <span class="breakdown-note">(6.5%)</span>
+              </span>
+              <span class="breakdown-val red" id="res-transaction">−$1.43</span>
+            </div>
+            <div class="breakdown-row fee">
+              <span class="breakdown-label">
+                <span class="breakdown-dot red"></span>
+                Payment Processing <span class="breakdown-note">(3% + $0.25)</span>
+              </span>
+              <span class="breakdown-val red" id="res-payment">−$0.91</span>
+            </div>
+            <div class="breakdown-row fee">
+              <span class="breakdown-label">
+                <span class="breakdown-dot red"></span>
+                Listing Fee
+              </span>
+              <span class="breakdown-val red" id="res-listing">−$0.20</span>
+            </div>
+            <div class="breakdown-row cost">
+              <span class="breakdown-label">
+                <span class="breakdown-dot orange"></span>
+                Material Cost
+              </span>
+              <span class="breakdown-val orange" id="res-material">−$6.00</span>
+            </div>
+            <div class="breakdown-row cost">
+              <span class="breakdown-label">
+                <span class="breakdown-dot orange"></span>
+                Labor Cost
+              </span>
+              <span class="breakdown-val orange" id="res-labor">−$11.25</span>
+            </div>
+            <div class="breakdown-divider"></div>
+            <div class="breakdown-row profit-row">
+              <span class="breakdown-label profit-label">True Profit</span>
+              <span class="breakdown-val profit-val" id="res-profit">$2.21</span>
+            </div>
+            <div class="profit-meter">
+              <div class="profit-bar-track">
+                <div class="profit-bar-fill" id="profit-bar"></div>
+              </div>
+              <span class="profit-pct" id="res-margin">10.1%</span>
+            </div>
+            <div class="profit-verdict" id="profit-verdict">
+              <span class="verdict-icon" id="verdict-icon">📊</span>
+              <span id="verdict-text">Low margin — check your pricing.</span>
+            </div>
+          </div>
+          <a href="#" class="btn btn-brand btn-block">Get Full Analysis Free →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pricing ──────────────────────────────────────────────────────── -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <p class="section-eyebrow">Pricing</p>
+      <h2 class="section-title">Simple, Transparent Pricing</h2>
+      <p class="section-sub">Start free. Upgrade when you're ready to see your full shop.</p>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-tier">Free</div>
+          <div class="pricing-price">$0<span>/month</span></div>
+          <p class="pricing-desc">Perfect for getting started and seeing if EtsyTrue helps your shop.</p>
+          <ul class="pricing-features">
+            <li><span class="feat-check">✓</span> Up to 5 listings analysed</li>
+            <li><span class="feat-check">✓</span> Last 30 days of orders</li>
+            <li><span class="feat-check">✓</span> True profit per listing</li>
+            <li><span class="feat-check">✓</span> Price optimizer</li>
+            <li><span class="feat-check">✓</span> Local cost storage</li>
+            <li class="feat-disabled"><span class="feat-x">✗</span> Full listing history</li>
+            <li class="feat-disabled"><span class="feat-x">✗</span> CSV export</li>
+            <li class="feat-disabled"><span class="feat-x">✗</span> 90 / 365-day analysis</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-block">Get Started Free</a>
+        </div>
+
+        <div class="pricing-card pricing-featured">
+          <div class="pricing-badge-pill">Most Popular</div>
+          <div class="pricing-tier">Pro</div>
+          <div class="pricing-price">$12<span>/month</span></div>
+          <p class="pricing-desc">For serious sellers who want the complete picture on every listing.</p>
+          <ul class="pricing-features">
+            <li><span class="feat-check">✓</span> <strong>Unlimited listings</strong></li>
+            <li><span class="feat-check">✓</span> Full order history (all time)</li>
+            <li><span class="feat-check">✓</span> 30 / 90 / 365-day analysis</li>
+            <li><span class="feat-check">✓</span> True profit per listing</li>
+            <li><span class="feat-check">✓</span> Price optimizer</li>
+            <li><span class="feat-check">✓</span> CSV export</li>
+            <li><span class="feat-check">✓</span> Period-over-period trends</li>
+            <li><span class="feat-check">✓</span> Priority support</li>
+          </ul>
+          <a href="#" class="btn btn-brand btn-block">Start Free Trial</a>
+          <p class="pricing-guarantee">14-day money-back guarantee. Cancel anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Testimonials ─────────────────────────────────────────────────── -->
+  <section class="testimonials-section">
+    <div class="container">
+      <p class="section-eyebrow">What sellers are saying</p>
+      <h2 class="section-title">Sellers Who Actually Know Their Numbers</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I thought my candle sets were my best seller. Turns out they were my worst margin item. EtsyTrue paid for itself in the first week — I raised the price and nobody blinked."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">S</div>
+            <div>
+              <div class="testimonial-name">Sarah K.</div>
+              <div class="testimonial-shop">Candles & Co. Shop · 320 sales/mo</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I was working 30 hours a week on Etsy and barely making minimum wage. This tool showed me exactly which listings to cut and which to double down on. Game changer."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">M</div>
+            <div>
+              <div class="testimonial-name">Marcus T.</div>
+              <div class="testimonial-shop">Handmade Leatherworks · 85 sales/mo</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"The price optimizer is brilliant. I put in my costs, set a 35% target margin, and it told me exactly what to charge. No more guessing, no more spreadsheets."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">J</div>
+            <div>
+              <div class="testimonial-name">Jess R.</div>
+              <div class="testimonial-shop">Pressed Flower Studio · 210 sales/mo</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ──────────────────────────────────────────────────────────── -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="section-title">Questions &amp; Answers</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            Is EtsyTrue really free?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. The free tier gives you full profit analysis for up to 5 listings with 30 days of order history. You can use it forever without paying anything. The Pro plan unlocks unlimited listings and longer date ranges.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is it safe? What data does it access?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>EtsyTrue uses the official Etsy API with read-only access. It can see your shop's listings and order history — it cannot modify anything, post listings, or make any changes to your shop. Your Etsy password is never seen by us. Your cost data (materials, labor) is stored only on your device.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Does it work for shops outside the US?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. EtsyTrue supports USD, GBP, EUR, CAD, and AUD. Payment processing fees are calculated per-country (Etsy's rates differ by region). Support for more currencies is coming soon.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            How accurate are the profit calculations?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Very accurate for the Etsy fee side — we use the exact same fee structure Etsy publishes (6.5% transaction fee, country-specific payment processing, $0.20 listing fee). The profit accuracy depends on how accurately you enter your own costs (materials and labor). Offsite Ads fees are not yet included in the MVP.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Will this work with my browser?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>EtsyTrue is a Chrome extension and works on Google Chrome, Microsoft Edge, and any other Chromium-based browser. Firefox and Safari are not currently supported.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I cancel my Pro subscription anytime?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Cancel anytime from your account — no questions asked. We also offer a 14-day money-back guarantee if you're not satisfied for any reason.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Final CTA ─────────────────────────────────────────────────────── -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="final-cta-card">
+        <h2 class="final-cta-title">Stop Guessing.<br />Start Knowing.</h2>
+        <p class="final-cta-sub">Join thousands of Etsy sellers who finally know their real profit on every single listing.</p>
+        <a href="#" class="btn btn-brand btn-xl">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Add to Chrome — It's Free
+        </a>
+        <p class="final-cta-note">No credit card required · Works in 3 minutes · Free forever tier</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <span class="nav-logo-mark">E</span>
+            <span class="nav-logo-text">EtsyTrue</span>
+          </a>
+          <p class="footer-tagline">Know your real Etsy profit.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>EtsyTrue is not affiliated with or endorsed by Etsy, Inc.</span>
+        <span>© 2025 EtsyTrue. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
