@@ -79,6 +79,10 @@ async function handleSubscriptionActive(attrs) {
     ? new Date(attrs.renews_at).toISOString()
     : null;
 
+  const trialEndsAt = attrs.trial_ends_at
+    ? new Date(attrs.trial_ends_at).toISOString()
+    : null;
+
   const { error } = await supabase.from('subscriptions').upsert(
     {
       email: email.trim().toLowerCase(),
@@ -86,6 +90,7 @@ async function handleSubscriptionActive(attrs) {
       lemon_subscription_id: String(attrs.id),
       lemon_customer_id: attrs.customer_id ? String(attrs.customer_id) : null,
       current_period_end: periodEnd,
+      trial_ends_at: trialEndsAt,
     },
     { onConflict: 'email' }
   );
