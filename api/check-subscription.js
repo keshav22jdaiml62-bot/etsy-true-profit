@@ -1,4 +1,7 @@
 // GET /api/check-subscription?email={email}
+// Returns subscription status for a given email address.
+// Used by the Chrome extension on startup and by the landing page.
+
 import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(
@@ -12,31 +15,27 @@ const CORS_HEADERS = {
   'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 };
 
-// Vercel native runtime uses res.setHeader(), NOT res.set() (that's Express-only)
-function setCors(res) {
-  Object.entries(CORS_HEADERS).forEach(([key, value]) => {
-    res.setHeader(key, value);
-  });
-}
-
 export default async function handler(req, res) {
   // Handle CORS preflight
   if (req.method === 'OPTIONS') {
-    setCors(res);
-    return res.status(200).end();
+    return res.status(200).set(CORS_HEADERS).end();
   }
 
   // Only allow GET
   if (req.method !== 'GET') {
-    setCors(res);
-    return res.status(405).json({ error: 'Method not allowed' });
+    return res
+      .status(405)
+      .set(CORS_HEADERS)
+      .json({ error: 'Method not allowed' });
   }
 
   const { email } = req.query;
 
   if (!email || typeof email !== 'string' || !email.includes('@')) {
-    setCors(res);
-    return res.status(400).json({ error: 'Valid email query parameter required' });
+    return res
+      .status(400)
+      .set(CORS_HEADERS)
+      .json({ error: 'Valid email query parameter required' });
   }
 
   const normalizedEmail = email.trim().toLowerCase();
@@ -44,48 +43,38 @@ export default async function handler(req, res) {
   try {
     const { data, error } = await supabase
       .from('subscriptions')
-      .select('plan, lemon_subscription_id, current_period_end, trial_ends_at, created_at')
+      .select(
+        'plan, lemon_subscription_id, current_period_end, trial_ends_at, created_at'
+      )
       .eq('email', normalizedEmail)
       .maybeSingle();
 
     if (error) {
       console.error('[check-subscription] Supabase error:', error);
-      setCors(res);
-      return res.status(500).json({ error: 'Database error' });
+      return res
+        .status(500)
+        .set(CORS_HEADERS)
+        .json({ error: 'Database error' });
     }
 
     const now = new Date();
 
     // ── No row found: brand-new user ─────────────────────────────────────────
     if (!data) {
-      const trialEnd = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
-
       const { error: insertError } = await supabase
         .from('subscriptions')
         .insert({
           email: normalizedEmail,
           plan: 'free',
-          trial_ends_at: trialEnd.toISOString(),
         });
-
-      setCors(res);
 
       if (insertError) {
         console.error('[check-subscription] Insert error:', insertError);
-        return res.status(200).json({
-          plan: 'free',
-          status: 'trial',
-          trialDaysLeft: 7,
-          trialEndsAt: trialEnd.toISOString(),
-          isPro: false,
-        });
       }
 
-      return res.status(200).json({
+      return res.status(200).set(CORS_HEADERS).json({
         plan: 'free',
-        status: 'trial',
-        trialDaysLeft: 7,
-        trialEndsAt: trialEnd.toISOString(),
+        status: 'free',
         isPro: false,
       });
     }
@@ -96,11 +85,11 @@ export default async function handler(req, res) {
         ? new Date(data.current_period_end)
         : null;
 
+      // Treat as active even if period_end is null (lifetime / grandfathered)
       const isActive = !periodEnd || periodEnd > now;
 
       if (isActive) {
-        setCors(res);
-        return res.status(200).json({
+        return res.status(200).set(CORS_HEADERS).json({
           plan: 'pro',
           status: 'active',
           currentPeriodEnd: data.current_period_end,
@@ -108,7 +97,7 @@ export default async function handler(req, res) {
         });
       }
 
-      // Pro lapsed — downgrade (fire and forget)
+      // Pro period has lapsed — downgrade to free in DB (fire and forget)
       supabase
         .from('subscriptions')
         .update({ plan: 'free' })
@@ -119,8 +108,7 @@ export default async function handler(req, res) {
           }
         });
 
-      setCors(res);
-      return res.status(200).json({
+      return res.status(200).set(CORS_HEADERS).json({
         plan: 'free',
         status: 'expired',
         isPro: false,
@@ -135,8 +123,7 @@ export default async function handler(req, res) {
         const msLeft = trialEnd - now;
         const trialDaysLeft = Math.ceil(msLeft / (1000 * 60 * 60 * 24));
 
-        setCors(res);
-        return res.status(200).json({
+        return res.status(200).set(CORS_HEADERS).json({
           plan: 'free',
           status: 'trial',
           trialDaysLeft,
@@ -147,16 +134,16 @@ export default async function handler(req, res) {
     }
 
     // ── Free tier, trial expired ─────────────────────────────────────────────
-    setCors(res);
-    return res.status(200).json({
+    return res.status(200).set(CORS_HEADERS).json({
       plan: 'free',
       status: 'free',
       isPro: false,
     });
-
   } catch (err) {
     console.error('[check-subscription] Unexpected error:', err);
-    setCors(res);
-    return res.status(500).json({ error: 'Internal server error' });
+    return res
+      .status(500)
+      .set(CORS_HEADERS)
+      .json({ error: 'Internal server error' });
   }
 }
