@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy for EtsyTrueProfit Chrome Extension" />
+  <title>Privacy Policy — EtsyTrueProfit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── Nav ── */
+    .nav {
+      border-bottom: 1px solid #f0f0f0;
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 17px;
+    }
+    .nav-logo-mark {
+      width: 30px;
+      height: 30px;
+      background: #F1641E;
+      color: #fff;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+    }
+    .nav-back {
+      font-size: 14px;
+      color: #666;
+      text-decoration: none;
+    }
+    .nav-back:hover { color: #F1641E; }
+
+    /* ── Content ── */
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .page-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #F1641E;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 8px;
+      color: #111;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #111;
+      margin: 40px 0 12px;
+    }
+
+    p { margin-bottom: 14px; color: #374151; }
+
+    ul, ol {
+      padding-left: 22px;
+      margin-bottom: 14px;
+      color: #374151;
+    }
+    li { margin-bottom: 6px; }
+
+    a { color: #F1641E; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .callout {
+      background: #fff7f4;
+      border-left: 3px solid #F1641E;
+      padding: 14px 18px;
+      border-radius: 0 6px 6px 0;
+      margin: 20px 0;
+      color: #374151;
+      font-size: 15px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #f0f0f0;
+      margin: 40px 0;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid #f0f0f0;
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: #aaa;
+    }
+    footer a { color: #888; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-mark">E</span>
+        EtsyTrueProfit
+      </a>
+      <a href="/" class="nav-back">← Back to home</a>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <p class="page-label">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective date: April 28, 2026 &nbsp;·&nbsp; Last updated: April 28, 2026</p>
+
+    <p>
+      EtsyTrueProfit ("we", "our", or "us") operates the EtsyTrue — Etsy Profit Calculator
+      Chrome Extension (the "Extension"). This Privacy Policy explains what information we
+      collect, how we use it, and what rights you have over your data.
+    </p>
+    <p>
+      By installing or using the Extension you agree to the practices described in this policy.
+      If you have any questions, email us at
+      <a href="mailto:vishala4716@gmail.com">vishala4716@gmail.com</a>.
+    </p>
+
+    <div class="callout">
+      <strong>Short version:</strong> Your Etsy data and cost inputs never leave your device on the
+      free tier. We only receive your email address if you upgrade to Pro.
+    </div>
+
+    <h2>1. What Data We Collect</h2>
+
+    <p><strong>Etsy OAuth Access Token</strong></p>
+    <p>
+      When you connect your Etsy shop, Etsy's official OAuth 2.0 flow issues an access token to
+      the Extension. This token is stored exclusively in <code>chrome.storage.sync</code> — it
+      never leaves your browser except to make read-only API calls directly to Etsy's servers.
+      We do not store it on any server we operate.
+    </p>
+
+    <p><strong>Etsy Shop Order and Listing Data</strong></p>
+    <p>
+      The Extension fetches your Etsy orders and listings via the Etsy API to calculate profit
+      figures. This data is processed locally in your browser and displayed inside the Extension.
+      On the free tier it is never transmitted to our servers. It is held in memory only for the
+      duration of your session and is not persisted between sessions.
+    </p>
+
+    <p><strong>Material Costs and Labor Hours You Enter</strong></p>
+    <p>
+      When you type in material costs per unit or minutes to make a product, those values are
+      saved in <code>chrome.storage.local</code> — local to your device and browser profile.
+      They are never transmitted anywhere.
+    </p>
+
+    <p><strong>Email Address (Pro subscribers only)</strong></p>
+    <p>
+      If you upgrade to Pro, you provide an email address at checkout. We receive that email
+      from our payment processor (Lemon Squeezy) and store it in our subscription database
+      (Supabase) solely to verify your Pro status when the Extension checks for an active
+      subscription. We do not use it for marketing without your consent.
+    </p>
+
+    <h2>2. What We Do NOT Collect</h2>
+
+    <ul>
+      <li><strong>Your Etsy password.</strong> We use OAuth — your password goes only to Etsy, never to us.</li>
+      <li><strong>Your payment card details.</strong> All payment processing is handled entirely by Lemon Squeezy. We never see your card number, CVV, or billing address.</li>
+      <li><strong>Your browsing history.</strong> The Extension only activates on Etsy-related pages and our own dashboard.</li>
+      <li><strong>Data from non-Etsy websites.</strong> We have no access to any pages outside of the Etsy domain and our Extension's own UI.</li>
+      <li><strong>Aggregate analytics or telemetry.</strong> We do not send usage events, crash reports, or any analytics to third-party tracking services.</li>
+    </ul>
+
+    <h2>3. How Data Is Stored</h2>
+
+    <ul>
+      <li>
+        <strong>OAuth token:</strong> <code>chrome.storage.sync</code> — encrypted by Chrome and
+        optionally synced to your signed-in Google account across devices. Governed by Google's
+        security practices.
+      </li>
+      <li>
+        <strong>Cost data you enter:</strong> <code>chrome.storage.local</code> — stays on your
+        device. Never synced, never transmitted.
+      </li>
+      <li>
+        <strong>Pro subscription record:</strong> Supabase database — we store your email address
+        and plan status only. Supabase uses industry-standard encryption at rest and in transit.
+      </li>
+    </ul>
+
+    <h2>4. Third-Party Services</h2>
+
+    <ul>
+      <li>
+        <strong>Etsy API</strong> — the official Etsy developer API, used with read-only
+        permissions to fetch your shop's order and listing data. Governed by
+        <a href="https://www.etsy.com/legal/privacy/" target="_blank" rel="noopener">Etsy's Privacy Policy</a>.
+      </li>
+      <li>
+        <strong>Lemon Squeezy</strong> — payment processing for Pro subscriptions. They collect
+        and process your payment details. Governed by
+        <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener">Lemon Squeezy's Privacy Policy</a>.
+      </li>
+      <li>
+        <strong>Supabase</strong> — database hosting for Pro subscriber records (email + plan
+        status only). Governed by
+        <a href="https://supabase.com/privacy" target="_blank" rel="noopener">Supabase's Privacy Policy</a>.
+      </li>
+    </ul>
+
+    <p>We do not sell, rent, or share your data with any other third parties.</p>
+
+    <h2>5. How We Use Your Data</h2>
+
+    <ul>
+      <li>To authenticate with the Etsy API and fetch your shop data for profit calculations.</li>
+      <li>To store your cost inputs so you don't have to re-enter them each session.</li>
+      <li>To verify your Pro subscription status (email only, Pro subscribers).</li>
+      <li>To respond to your support enquiries.</li>
+    </ul>
+
+    <p>We do not use your data for advertising, profiling, or any purpose beyond operating the Extension.</p>
+
+    <h2>6. Data Retention and Deletion</h2>
+
+    <p>
+      <strong>Locally stored data</strong> (OAuth token, cost inputs) is deleted automatically
+      when you uninstall the Extension from Chrome. You can also clear it at any time via
+      Chrome's extension settings or by disconnecting your Etsy account inside the Extension.
+    </p>
+    <p>
+      <strong>Pro subscription records</strong> in our Supabase database are retained while your
+      subscription is active and for up to 90 days after cancellation for accounting purposes.
+      To request immediate deletion, email us at
+      <a href="mailto:vishala4716@gmail.com">vishala4716@gmail.com</a> with the subject line
+      "Delete my data" and we will remove your record within 14 days.
+    </p>
+
+    <h2>7. Children's Privacy</h2>
+
+    <p>
+      The Extension is not intended for use by anyone under the age of 13. We do not knowingly
+      collect personal information from children under 13. If you believe a child has provided
+      us with personal information, please contact us and we will delete it promptly.
+    </p>
+
+    <h2>8. Security</h2>
+
+    <p>
+      We take reasonable technical measures to protect your data: OAuth tokens are stored in
+      Chrome's encrypted storage, data in transit uses HTTPS/TLS, and our Supabase database
+      uses row-level security. No method of transmission or storage is 100% secure, but we
+      strive to use commercially acceptable means to protect your information.
+    </p>
+
+    <h2>9. Your Rights</h2>
+
+    <p>Depending on your jurisdiction, you may have the right to:</p>
+    <ul>
+      <li>Access the personal data we hold about you</li>
+      <li>Correct inaccurate data</li>
+      <li>Request deletion of your data</li>
+      <li>Object to or restrict processing of your data</li>
+    </ul>
+    <p>
+      To exercise any of these rights, contact us at
+      <a href="mailto:vishala4716@gmail.com">vishala4716@gmail.com</a>.
+    </p>
+
+    <h2>10. Changes to This Policy</h2>
+
+    <p>
+      We may update this Privacy Policy from time to time. When we do, we will update the
+      "Effective date" at the top of this page. We encourage you to review this policy
+      periodically. Continued use of the Extension after changes constitutes acceptance of
+      the updated policy.
+    </p>
+
+    <hr />
+
+    <h2>11. Contact</h2>
+
+    <p>
+      If you have any questions, concerns, or requests regarding this Privacy Policy or your
+      data, please contact us:
+    </p>
+    <p>
+      <strong>EtsyTrueProfit</strong><br />
+      Email: <a href="mailto:vishala4716@gmail.com">vishala4716@gmail.com</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2026 EtsyTrueProfit &nbsp;·&nbsp;
+      <a href="/privacy">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="/terms">Terms of Service</a> &nbsp;·&nbsp;
+      Not affiliated with Etsy, Inc.
+    </p>
+  </footer>
+
+</body>
+</html>
